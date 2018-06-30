@@ -17,9 +17,7 @@ from PIL import Image
 def siftExtractor(imgPath):
     img = cv2.imread(imgPath)
     gray= cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
-    sift= cv2.xfeatures2d.SIFT_create(400)
-    sift.setHessianThreshold(1000)
-    sift.setExtended(1)
+    sift= cv2.xfeatures2d.SIFT_create(1000)
     kp, des = sift.detectAndCompute(gray,None)
     return kp,des
     
