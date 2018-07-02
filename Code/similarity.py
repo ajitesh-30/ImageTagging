@@ -32,4 +32,16 @@ def findSimilarity(word1,word2):
      w2 = wordnet.synset(word2)     
      return w1.wup_similarity(w2)
  
-    
+def Average(list1):
+    return sum(list1) / len(list1)
+     
+ 
+def accuracy(list1,list2):
+    finalList=[]
+    for word1 in list1:
+        listcheck=[]
+        for word2 in list2:
+            k=findSimilarity(word1,word2)
+            listcheck.append(k)
+        finalList.append(max(listcheck))
+    return Average(finalList)
