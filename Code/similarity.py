@@ -51,6 +51,8 @@ def accuracy(list1,list2):
 
 
 def finalAccuracy(list1,list2):
+    list1=[element.lower() for element in list1]
+    list2=[element.lower() for element in list2]
     k=list(set(list1).intersection(list2))
     ac1=len(k)/len(list1)
     temp1=list(set(list1)-set(k))
@@ -58,5 +60,6 @@ def finalAccuracy(list1,list2):
     ac2=accuracy(temp1,temp2)
     return(ac1+ac2)/2
     
-    
-    
+list1=["Book","School","bus","aeroplane","computer"]
+list2=["computer","Airport","Pen","School","car"]    
+print(finalAccuracy(list1,list2))    
